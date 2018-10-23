@@ -1,4 +1,4 @@
-package com.example.shadow.piccollagequiz.domain.model.roman_numerals;
+package com.example.shadow.piccollagequiz.domain.model.numerals;
 
 public class RomanNumeral {
     private final String symbols;

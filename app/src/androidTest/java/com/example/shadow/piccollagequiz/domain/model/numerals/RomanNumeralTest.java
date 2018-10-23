@@ -1,6 +1,5 @@
-package com.example.shadow.piccollagequiz.domain.model.roman_numerals;
+package com.example.shadow.piccollagequiz.domain.model.numerals;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
