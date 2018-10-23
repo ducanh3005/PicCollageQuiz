@@ -1,9 +1,7 @@
 package com.example.shadow.piccollagequiz;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.TextureView;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 

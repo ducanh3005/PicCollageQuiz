@@ -3,8 +3,8 @@ package com.example.shadow.piccollagequiz.domain.model.numerals;
 import android.support.annotation.NonNull;
 
 public class ChineseNumeral {
-    public static int MAX_UNIT = 1000;
-    public static int UNIT_DIVIDER = 10;
+    private final static int MAX_UNIT = 1000;
+    private final static int UNIT_DIVIDER = 10;
 
     private int value;
 
