@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.tv_ok).setOnClickListener(v -> showNumeralsParseResult());
+        findViewById(R.id.tv_quiz01_ok).setOnClickListener(v -> showNumeralsParseResult());
     }
 
     private void showNumeralsParseResult() {

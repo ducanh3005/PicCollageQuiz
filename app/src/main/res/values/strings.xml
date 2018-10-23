@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PicCollageQuiz</string>
+    <string name="quiz_02_title">Random generate two rectangle for testing intersection</string>
+    <string name="common_ok">確定</string>
+    <string name="quiz01_to">to</string>
+    <string name="quiz01_hint">Roman Numeral</string>
 </resources>
