@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cv_quiz1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="10dp"
@@ -67,6 +67,7 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cv_quiz2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="10dp"
@@ -74,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        app:layout_constraintTop_toBottomOf="@+id/cv_quiz1">
 
         <TextView
             android:id="@+id/textView5"
@@ -93,5 +94,34 @@
             android:textColor="@color/colorPrimary"
             tools:ignore="RtlHardcoded" />
 
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_quiz3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="58dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_quiz2">
+
+        <TextView
+            android:id="@+id/tv_quiz03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/quiz3_title" />
+
+        <TextView
+            android:id="@+id/tv_quiz03_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="10dp"
+            android:text="@string/common_ok"
+            android:textColor="@color/colorPrimary"
+            tools:ignore="RtlHardcoded" />
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,8 @@
 package com.example.shadow.piccollagequiz;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         findViewById(R.id.tv_quiz01_ok).setOnClickListener(v -> showNumeralsParseResult());
         findViewById(R.id.tv_quiz02_ok).setOnClickListener(v -> showRandomRectangleTest());
+        findViewById(R.id.tv_quiz03_ok).setOnClickListener(v -> showPacManDevFlow());
     }
 
     private void showNumeralsParseResult() {
@@ -43,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showRandomRectangleTest() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        View convertView = getLayoutInflater().inflate(R.layout.layout_list, null);
+        @SuppressLint("InflateParams") View convertView = getLayoutInflater().inflate(R.layout.layout_list, null);
         alertDialog.setView(convertView);
         ListView lv = convertView.findViewById(R.id.lv_content);
         SimpleAdapter adapter = new SimpleAdapter(this, generateTestCases(), R.layout.layout_list_item, new String[]{"rect1", "rect2", "result"}
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
             Map<String, String> testcase = new HashMap<>(3);
             Rectangle rectangle1 = randomRectangle(MAX_LENGTH);
             Rectangle rectangle2 = randomRectangle(MAX_LENGTH);
-            testcase.put("rect1", getRectagnleRect(rectangle1));
-            testcase.put("rect2", getRectagnleRect(rectangle2));
+            testcase.put("rect1", getRectangleRect(rectangle1));
+            testcase.put("rect2", getRectangleRect(rectangle2));
             testcase.put("result", String.valueOf(rectangle1.intersecting(rectangle2)).toUpperCase());
             testCases.add(testcase);
         }
@@ -73,8 +77,13 @@ public class MainActivity extends AppCompatActivity {
         return new Rectangle(ax, ay, ax + (int) (Math.random() * max_length), ay + (int) (Math.random() * max_length));
     }
 
-    public static String getRectagnleRect(Rectangle rectangle) {
+    public static String getRectangleRect(Rectangle rectangle) {
         int[] rect = rectangle.getRect();
         return "[" + rect[0] + "," + rect[1] + "," + rect[2] + "," + rect[3] + ']';
+    }
+
+    private void showPacManDevFlow() {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/14zS0hcBv4PFJg9irL63kEpVZE41FTI_UFWOazKu1KcQ/edit?usp=sharing"));
+        startActivity(browserIntent);
     }
 }
