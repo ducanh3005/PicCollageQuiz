@@ -5,4 +5,5 @@
     <string name="quiz01_to">to</string>
     <string name="quiz01_hint">Roman Numeral</string>
     <string name="quiz3_title">PAC-MAN team project \nWrite an explanation in English outlining the process of how you would lead the team to build this game</string>
+    <string name="quiz4_title">Use HTML5 Canvas to create a simple webpage that displays your name in a creative way.</string>
 </resources>

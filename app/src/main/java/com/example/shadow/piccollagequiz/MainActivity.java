@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tv_quiz01_ok).setOnClickListener(v -> showNumeralsParseResult());
         findViewById(R.id.tv_quiz02_ok).setOnClickListener(v -> showRandomRectangleTest());
         findViewById(R.id.tv_quiz03_ok).setOnClickListener(v -> showPacManDevFlow());
+        findViewById(R.id.tv_quiz04_ok).setOnClickListener(v -> openWebActivity());
     }
 
     private void showNumeralsParseResult() {
@@ -85,5 +86,9 @@ public class MainActivity extends AppCompatActivity {
     private void showPacManDevFlow() {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/14zS0hcBv4PFJg9irL63kEpVZE41FTI_UFWOazKu1KcQ/edit?usp=sharing"));
         startActivity(browserIntent);
+    }
+
+    private void openWebActivity() {
+        startActivity(new Intent(this,WebActivity.class));
     }
 }
