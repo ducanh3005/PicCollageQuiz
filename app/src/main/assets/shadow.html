@@ -6,18 +6,27 @@
         background-color: #000;   
         background-repeat: no-repeat;
         margin: 0;
-    }    
+    }
+    img
+    {
+        display:block;
+        width:100%; height:100%;
+        object-fit: cover;
+
+    }
     </style>
     <script src="libs/particle.js"></script>
+    <script src="libs/god.js"></script>
     <script>
         window.onload = function () {  
             onloadParticle(document.getElementById("canvas"));
+            //onloadGod(document.getElementById("canvas"));
         }
     </script>
 </head>
 <body>
     <!-- <script src="libs/three.js"></script>
     <script src="libs/trail.js"></script> -->
-<canvas id="canvas" width="800" height="600"></canvas>
+<canvas id="canvas"></canvas>
 </body>
 </html>

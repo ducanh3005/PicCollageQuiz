@@ -21,7 +21,6 @@ var tctx;
 var W,H;
 var particles;
 var num = 0;
-
 TEXTArray = ["Shadow","Neil"];
 QUALITY_TO_FONT_SIZE = [10, 12, 40, 50, 100, 350];
 QUALITY_TO_SCALE = [20, 6, 4, 2, 0.9, 0.5];
@@ -30,8 +29,25 @@ QUALITY_TO_TEXT_POS = [10, 20, 60, 100, 370, 280];
 if (typeof Particle == "undefined" || !Particle){
    var Particle = {};
 }
+var godImage;
 
 function onloadParticle(canvas){    
+    var img = new Image();        
+    img.onload = function() {
+        var tcanvas2 = document.createElement("canvas");
+        var tctx2 = tcanvas.getContext("2d"); 
+        tcanvas2.width = window.innerWidth;
+        tcanvas2.height = window.innerHeight;
+        tctx2.drawImage(img,0,0,tcanvas2.width, tcanvas2.height)  
+        godImage = tctx.getImageData(0,0,tcanvas2.width, tcanvas2.height);        
+        for(var i = 0; i < godImage.data.length; i += 4) {
+            godImage.data[i] = godImage.data[i] < 125 ? 255:0;
+            godImage.data[i+1] = godImage.data[i+1] < 125 ? 255:0;
+            godImage.data[i+2] = godImage.data[i+2] < 125 ? 255:0;
+            godImage.data[i+3] = 255;
+        }        
+      };    
+    img.src = 'god.png';    
     Particle.initParticles().MoveParticleToRandomPosition(TEXTArray[0]);    
     Particle.draw();
     setInterval(Particle.draw, 30);
@@ -88,6 +104,11 @@ function onloadParticle(canvas){
         ctx.fillStyle = BACKGROUND;
         ctx.fillRect(0, 0, W, H)        
         ctx.globalCompositeOperation = "lighter";
+        if(godImage != null){
+            ctx.putImageData(godImage, 0, 0)  
+        }
+        
+        //ctx.drawImage(godImage,0,0);        
 
         for (var i = 0; i < particles.length; i++) {            
             p = particles[i];     
